@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Học mỗi ngày – Tiếng Anh & 日本語</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+<script src="assets/profile.js"></script>
+<style>
+:root{
+  --paper:#F2F3EE; --surface:#FFFFFF; --sunk:#E9EBE4; --ink:#1D2230; --muted:#5B6274; --line:#D6D9DF;
+  --en:#0E6E6A; --en-soft:#DDEFEE; --jp:#BF3A2B; --jp-soft:#F6E2DE; --ai:#27407A; --gold:#E5A11B;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#11141B; --surface:#191E28; --sunk:#141821; --ink:#E7E5DF; --muted:#9BA2B2; --line:#2C3443;
+  --en:#4FBDB6; --en-soft:#16393B; --jp:#E2614F; --jp-soft:#3A221F; --ai:#93ABE2; --gold:#F0B43A; color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#11141B; --surface:#191E28; --sunk:#141821; --ink:#E7E5DF; --muted:#9BA2B2; --line:#2C3443;
+  --en:#4FBDB6; --en-soft:#16393B; --jp:#E2614F; --jp-soft:#3A221F; --ai:#93ABE2; --gold:#F0B43A; color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:400;line-height:1.55}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ai);outline-offset:2px}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 20px 64px}
+h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.02em;margin:0 0 10px;font-weight:700}
+h1 .jp{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:600;color:var(--jp)}
+h1 .en{color:var(--en)}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 28px}
+h2{font-size:1.15rem;margin:0 0 12px;font-weight:600}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.who{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.chip{border:1px solid var(--line);background:var(--sunk);border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:500}
+.chip:hover{border-color:var(--ai)}
+label{display:block;font-size:.85rem;color:var(--muted);margin:12px 0 4px}
+input[type=text],textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px 11px;background:var(--sunk)}
+textarea{min-height:64px;resize:vertical}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 16px;cursor:pointer;font-weight:500}
+.btn.primary{background:var(--ai);border-color:var(--ai);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#11141B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#11141B}}
+.btn.danger{color:var(--jp)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:center}
+.hello{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.hello p{margin:0;font-size:1.3rem;font-weight:600}
+.hello a{color:var(--muted);font-size:.9rem}
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.course{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;position:relative;overflow:hidden;transition:transform .15s,border-color .15s}
+.course:hover{transform:translateY(-2px)}
+.course.en{border-top:6px solid var(--en)}
+.course.jp{border-top:6px solid var(--jp)}
+.course .tag{font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.course.en .tag{color:var(--en)} .course.jp .tag{color:var(--jp)}
+.course h3{font-size:1.45rem;margin:6px 0 6px;line-height:1.2}
+.course.jp h3{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif}
+.course p{color:var(--muted);margin:0 0 16px;font-size:.92rem}
+.bar{height:8px;border-radius:5px;background:var(--sunk);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--gold)}
+.meta{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);margin-top:8px}
+.go{margin-top:14px;font-weight:600}
+.course.en .go{color:var(--en)} .course.jp .go{color:var(--jp)}
+details{margin-top:24px}
+summary{cursor:pointer;font-weight:600}
+.note{font-size:.85rem;color:var(--muted);margin:22px 0 0;max-width:75ch}
+.hidden{display:none!important}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:8px 14px;border-radius:8px;font-size:.85rem;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><span class="en">English</span> &amp; <span class="jp">日本語</span>, mỗi ngày một chút</h1>
+  <p class="lead">Hai lộ trình 12 tuần cho người làm IT: tiếng Anh giao tiếp + TOEIC, và tiếng Nhật kaiwa BJT + JLPT N1. Mỗi ngày: mẫu câu, nghe, role-play với Claude, luyện đề và chấm điểm.</p>
+
+  <!-- Chọn / tạo người học -->
+  <section id="pick" class="panel hidden">
+    <h2>Ai đang học?</h2>
+    <div class="who" id="who"></div>
+    <details id="newBox">
+      <summary>+ Tạo người học mới</summary>
+      <label for="nName">Tên hiển thị</label>
+      <input type="text" id="nName" maxlength="40" placeholder="Ví dụ: Linh">
+      <label for="nEn">Giới thiệu bản thân bằng tiếng Anh (Claude dùng khi role-play)</label>
+      <textarea id="nEn" placeholder="I’m a business analyst in Vietnam working on IT projects for Japanese clients"></textarea>
+      <label for="nJp">Giới thiệu bản thân bằng tiếng Nhật (cho phần tiếng Nhật)</label>
+      <textarea id="nJp" placeholder="ベトナム人のBA。日本語はN2+、日系のIT案件に携わっている"></textarea>
+      <div class="row"><button class="btn primary" id="createBtn">Bắt đầu học</button></div>
+    </details>
+    <details>
+      <summary>Khôi phục từ file sao lưu</summary>
+      <p class="note" style="margin-top:8px">Chọn file .json đã sao lưu từ máy khác.</p>
+      <input type="file" id="importFile" accept="application/json,.json">
+    </details>
+  </section>
+
+  <!-- Trang chính khi đã chọn người học -->
+  <section id="home" class="hidden">
+    <div class="hello"><p id="hi"></p><a href="?switch=1">Không phải bạn? Đổi người học</a></div>
+    <div class="courses">
+      <a class="course en" href="en.html">
+        <div class="tag">English · 84 ngày</div>
+        <h3>Nói tiếng Anh tự tin</h3>
+        <p>Công việc BA/IT, đời sống, họp hành; role-play mỗi ngày và 15 câu kiểu TOEIC.</p>
+        <div class="bar"><i id="enBar"></i></div>
+        <div class="meta"><span id="enDays">0/84 ngày</span><span id="enScore"></span></div>
+        <div class="go">Học bài hôm nay →</div>
+      </a>
+      <a class="course jp" href="jp.html">
+        <div class="tag">日本語 · 84日</div>
+        <h3>日本語・八十四日</h3>
+        <p>Kaiwa trong công ty IT Nhật theo BJT, nhiều domain, phỏng vấn chuyển việc và đề N1.</p>
+        <div class="bar"><i id="jpBar"></i></div>
+        <div class="meta"><span id="jpDays">0/84 ngày</span><span id="jpScore"></span></div>
+        <div class="go">Học bài hôm nay →</div>
+      </a>
+    </div>
+
+    <details>
+      <summary>Hồ sơ của bạn</summary>
+      <label for="eName">Tên hiển thị</label>
+      <input type="text" id="eName" maxlength="40">
+      <label for="eEn">Giới thiệu bản thân bằng tiếng Anh</label>
+      <textarea id="eEn"></textarea>
+      <label for="eJp">Giới thiệu bản thân bằng tiếng Nhật</label>
+      <textarea id="eJp"></textarea>
+      <div class="row">
+        <button class="btn primary" id="saveProfile">Lưu hồ sơ</button>
+        <button class="btn" id="exportBtn">Sao lưu tiến độ (.json)</button>
+        <button class="btn danger" id="deleteBtn">Xoá người học này</button>
+      </div>
+    </details>
+  </section>
+
+  <p class="note">Không cần tài khoản. Mỗi người học có hồ sơ riêng, lưu trong trình duyệt của thiết bị đang dùng; không có gì được gửi lên máy chủ. Đổi máy hoặc đổi trình duyệt thì dùng “Sao lưu tiến độ” rồi “Khôi phục từ file sao lưu” ở máy mới. Câu hỏi luyện đề do Claude soạn theo dạng đề, không phải đề thi thật.</p>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+let tt;function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2400)}
+const qs=new URLSearchParams(location.search);
+const next=qs.get("next");
+if(qs.get("switch")){LP.clearActive();history.replaceState(null,"","index.html")}
+
+function enter(id){
+  LP.setActive(id);
+  if(next&&/^(en|jp)\.html(#[A-Za-z0-9-]*)?$/.test(next)){location.href=next;return}
+  render();
+}
+function renderPick(){
+  const box=$("who");box.innerHTML="";
+  const ps=LP.list();
+  ps.forEach(p=>{const b=document.createElement("button");b.className="chip";b.textContent=p.name;b.onclick=()=>enter(p.id);box.appendChild(b)});
+  if(!ps.length){box.innerHTML='<span style="color:var(--muted)">Chưa có ai. Tạo người học đầu tiên bên dưới.</span>';$("newBox").open=true}
+}
+function readJSON(k){try{return JSON.parse(LP.get(k)||"null")}catch(e){return null}}
+function renderHome(p){
+  $("hi").textContent="Chào "+p.name+" 👋";
+  // Tiếng Anh: 5 việc mỗi ngày
+  const en=readJSON("e60-state@"+p.id)||{};let ed=0,es=[];
+  for(let i=0;i<84;i++){const a=en["d"+i];if(a&&a.filter(Boolean).length>=5)ed++;if(typeof en["s"+i]==="number")es.push(en["s"+i])}
+  $("enBar").style.width=(ed/84*100)+"%";$("enDays").textContent=ed+"/84 ngày";
+  $("enScore").textContent=es.length?"Role-play TB "+(es.reduce((a,b)=>a+b,0)/es.length).toFixed(1)+"/10":"";
+  // Tiếng Nhật: 6 việc mỗi ngày
+  const jp=readJSON("jp56_v1@"+p.id)||{};const days=jp.days||{};let jd=0,js=[];
+  Object.keys(days).forEach(k=>{const d=days[k];if(d&&d.t&&d.t.filter(Boolean).length>=d.t.length&&d.t.length)jd++;const v=parseFloat(d&&d.rp);if(!isNaN(v))js.push(v)});
+  $("jpBar").style.width=(jd/84*100)+"%";$("jpDays").textContent=jd+"/84 ngày";
+  $("jpScore").textContent=js.length?"Kaiwa TB "+(js.reduce((a,b)=>a+b,0)/js.length).toFixed(1)+"/10":"";
+  $("eName").value=p.name;$("eEn").value=p.aboutEn||"";$("eJp").value=p.aboutJp||"";
+  $("eEn").placeholder=LP.DEF_EN;$("eJp").placeholder=LP.DEF_JP;
+}
+function render(){
+  const p=LP.active();
+  $("pick").classList.toggle("hidden",!!p);$("home").classList.toggle("hidden",!p);
+  if(p)renderHome(p);else renderPick();
+}
+$("createBtn").onclick=()=>{
+  const name=$("nName").value.trim();if(!name){toast("Nhập tên trước đã.");$("nName").focus();return}
+  const ps=LP.list();const id="p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+  ps.push({id,name,aboutEn:$("nEn").value.trim(),aboutJp:$("nJp").value.trim(),created:Date.now()});
+  LP.saveList(ps);enter(id);
+};
+$("saveProfile").onclick=()=>{
+  const p=LP.active();if(!p)return;const ps=LP.list();const q=ps.find(x=>x.id===p.id);
+  q.name=$("eName").value.trim()||q.name;q.aboutEn=$("eEn").value.trim();q.aboutJp=$("eJp").value.trim();
+  LP.saveList(ps);render();toast("Đã lưu hồ sơ.");
+};
+$("deleteBtn").onclick=()=>{
+  const p=LP.active();if(!p)return;
+  if(!confirm("Xoá "+p.name+" cùng toàn bộ tiến độ, điểm và ghi chú trên máy này? Không hoàn tác được."))return;
+  LP.keysOf(p.id).forEach(k=>LP.del(k));LP.saveList(LP.list().filter(x=>x.id!==p.id));LP.clearActive();render();toast("Đã xoá.");
+};
+$("exportBtn").onclick=()=>{
+  const p=LP.active();if(!p)return;const data={};
+  LP.keysOf(p.id).forEach(k=>{data[k.slice(0,k.length-p.id.length-1)]=LP.get(k)});
+  const blob=new Blob([JSON.stringify({app:"hoc-moi-ngay",v:1,profile:p,data},null,1)],{type:"application/json"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+  a.download="tien-do-"+p.name.replace(/[^\w\-]+/g,"_")+"-"+new Date().toISOString().slice(0,10)+".json";
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+};
+$("importFile").onchange=e=>{
+  const f=e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{
+    const o=JSON.parse(r.result);if(!o||o.app!=="hoc-moi-ngay"||!o.profile||!o.profile.id)throw 0;
+    const ps=LP.list();const ex=ps.find(x=>x.id===o.profile.id);
+    if(ex&&!confirm("Máy này đã có “"+ex.name+"”. Ghi đè bằng dữ liệu trong file?"))return;
+    const rest=ps.filter(x=>x.id!==o.profile.id);rest.push(o.profile);LP.saveList(rest);
+    Object.keys(o.data||{}).forEach(b=>{if(typeof o.data[b]==="string")LP.set(b+"@"+o.profile.id,o.data[b])});
+    toast("Đã khôi phục "+o.profile.name+".");enter(o.profile.id);
+  }catch(err){toast("File không hợp lệ.")}};
+  r.readAsText(f);e.target.value="";
+};
+render();
+</script>
+</body>
+</html>
